@@ -22,7 +22,7 @@ export default {
       if(data.embed.description) result.push(`  .setDescription(${JSON.stringify(data.embed.description)})`);
       if(data.embed.thumbnail) result.push(`  .setThumbnail(${JSON.stringify(data.embed.thumbnail)})`);
       if(data.embed.fields) {
-          for(let field in data.embed.fields) {
+          for(let field of data.embed.fields) {
               let name = field.name ? JSON.stringify(field.name) : null;
               let value = field.value ? JSON.stringify(field.value) : null;
               let inline = field.inline === undefined ? `` : `, ` + JSON.stringify(field.inline);
